@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Code Review: Complete Learning Guide</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">CodeReview.AI Learn</div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#fundamentals">Fundamentals</a></li>
+                    <li><a href="#architecture">Architecture</a></li>
+                    <li><a href="#practices">Best Practices</a></li>
+                    <li><a href="#implementation">Implementation</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>AI-Powered Code Review Tools</h1>
+            <p class="tagline">Learn how to build intelligent systems that catch bugs, teach coding practices, and improve developer productivity</p>
+            <div class="cta-buttons">
+                <a href="#fundamentals" class="btn btn-primary">Start Learning</a>
+                <a href="#resources" class="btn btn-secondary">Get Resources</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="fundamentals" class="section">
+        <div class="container">
+            <h2>1. Fundamentals</h2>
+            
+            <div class="content-grid">
+                <article class="card">
+                    <h3>What is Code Review?</h3>
+                    <p>Code review is a systematic examination of source code by developers other than the original author. Traditional code reviews are manual, time-consuming, and subjective. AI-powered code review automates detection of issues while maintaining human judgment for complex decisions.</p>
+                    <div class="highlights">
+                        <strong>Key Points:</strong>
+                        <ul>
+                            <li>Manual reviews catch ~60% of bugs; AI tools catch 70-85%</li>
+                            <li>Reduces code review time from hours to minutes</li>
+                            <li>Scales across teams and projects</li>
+                            <li>Provides consistent feedback</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h3>Why AI for Code Review?</h3>
+                    <p>Traditional linters check syntax. AI goes deeper by understanding code semantics, patterns, and business logic. An AI system can detect security vulnerabilities, performance issues, and design anti-patterns that static analysis misses.</p>
+                    <div class="highlights">
+                        <strong>Advantages:</strong>
+                        <ul>
+                            <li>Understands context and intent</li>
+                            <li>Learns from patterns across codebases</li>
+                            <li>Provides educational explanations</li>
+                            <li>Adapts to team standards</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h3>Core Components</h3>
+                    <p>An effective AI code review system has three main parts:</p>
+                    <div class="highlights">
+                        <strong>1. Issue Detection:</strong> Find bugs, anti-patterns, and security issues
+                        <br><strong>2. Analysis:</strong> Understand severity, impact, and context
+                        <br><strong>3. Education:</strong> Explain why it matters and how to fix it
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h3>Types of Issues Detected</h3>
+                    <p>AI code review tools can identify multiple categories of problems:</p>
+                    <div class="highlights">
+                        <strong>Categories:</strong>
+                        <ul>
+                            <li><strong>Performance:</strong> Inefficient algorithms, memory leaks</li>
+                            <li><strong>Security:</strong> SQL injection, unvalidated input</li>
+                            <li><strong>Maintainability:</strong> Complex functions, poor naming</li>
+                            <li><strong>Reliability:</strong> Null pointer exceptions, race conditions</li>
+                            <li><strong>Style:</strong> Naming conventions, formatting</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="architecture" class="section bg-alt">
+        <div class="container">
+            <h2>2. System Architecture</h2>
+            
+            <div class="architecture-diagram">
+                <div class="diagram-box">
+                    <h4>Code Input</h4>
+                    <p>Source code from PR or commit</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="diagram-box">
+                    <h4>Parser & AST</h4>
+                    <p>Parse code structure</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="diagram-box">
+                    <h4>Analysis Engine</h4>
+                    <p>Detect issues using ML</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="diagram-box">
+                    <h4>Explanation Generator</h4>
+                    <p>Create interactive lessons</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="diagram-box">
+                    <h4>Report & Feedback</h4>
+                    <p>Display to developer</p>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <article class="card">
+                    <h3>1. Code Parser (AST)</h3>
+                    <p>The Abstract Syntax Tree (AST) represents code as a structured tree. This allows analysis of code semantics beyond just text patterns.</p>
+                    <div class="code-example">
+                        <strong>Example - Python Function:</strong>
+                        <pre><code>def calculate_total(prices):
+    total = 0
+    for p in prices:
+        total = total + p
+    return total</code></pre>
+                        <strong>AST shows:</strong> Function definition → Loop → Assignment operation
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h3>2. Static Analysis</h3>
+                    <p>Analyze code without executing it. Check for pattern matching, complexity metrics, and rule-based detection.</p>
+                    <div class="highlights">
+                        <strong>Techniques:</strong>
+                        <ul>
+                            <li>Cyclomatic complexity measurement</li>
+                            <li>Data flow analysis</li>
+                            <li>Control flow analysis</li>
+                            <li>Pattern matching against known issues</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h3>3. Machine Learning Models</h3>
+                    <p>Train models on historical code data to predict problematic patterns. Models learn from:</p>
+                    <div class="highlights">
+                        <ul>
+                            <li>Open source repositories (GitHub, GitLab)</li>
+                            <li>Issue tracking systems</li>
+                            <li>Code review comments</li>
+                            <li>Bug reports and fixes</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h3>4. Explanation Engine</h3>
+                    <p>Generate context-aware, educational explanations using LLMs. This is what makes the tool teachable, not just punitive.</p>
+                    <div class="highlights">
+                        <strong>Output includes:</strong>
+                        <ul>
+                            <li>Why this is a problem</li>
+                            <li>Real-world consequences</li>
+                            <li>Step-by-step fixes</li>
+                            <li>Similar patterns to avoid</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="practices" class="section">
+        <div class="container">
+            <h2>3. Best Practices for Implementation</h2>
+            
+            <div class="content-grid">
+                <article class="card">
+                    <h3>Start with One Language</h3>
+                    <p>Don't try to support all languages at once. Start with the most popular in your target market (Python, JavaScript, Java, or Go). Each language has different parsing, style rules, and common patterns.</p>
+                    <div class="highlights">
+                        <strong>Why start small:</strong>
+                        <ul>
+                            <li>Focused ML training data</li>
+                            <li>Fewer false positives</li>
+                            <li>Faster iteration</li>
+                            <li>Better language-specific insights</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h3>Focus on High-Impact Issues</h3>
+                    <p>Not all issues are equal. Security and performance bugs impact production. Style issues can wait. Prioritize:</p>
+                    <div class="highlights">
+                        <strong>Priority Levels:</strong>
+                        <ul>
+                            <li>🔴 Critical: Security, crashes, data loss</li>
+                            <li>🟠 High: Performance, memory leaks</li>
+                            <li>🟡 Medium: Maintainability, complexity</li>
+                            <li>🟢 Low: Style, naming conventions</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h3>Build Trust Through Accuracy</h3>
+                    <p>False positives destroy user trust faster than anything. Developers will ignore tools that cry wolf.</p>
+                    <div class="highlights">
+                        <strong>Quality Metrics:</strong>
+                        <ul>
+                            <li>Precision > Recall initially (fewer false positives)</li>
+                            <li>Aim for 95%+ accuracy before release</li>
+                            <li>Allow developers to ignore/suppress findings</li>
+                            <li>Track false positives and improve</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h3>Make Explanations Actionable</h3>
+                    <p>A good explanation should answer: What? Why? How? and When?</p>
+                    <div class="highlights">
+                        <strong>Example of Good Explanation:</strong>
+                        <br><strong>What:</strong> Function is too long (47 lines)
+                        <br><strong>Why:</strong> Hard to test, understand, and maintain
+                        <br><strong>How:</strong> Extract logging logic into separate function
+                        <br><strong>When:</strong> Functions should be ~20 lines max
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h3>Integrate Into Developer Workflow</h3>
+                    <p>The tool must fit seamlessly where developers already work:</p>
+                    <div class="highlights">
+                        <strong>Integration Points:</strong>
+                        <ul>
+                            <li>IDE extensions (VS Code, PyCharm)</li>
+                            <li>Git pre-commit hooks</li>
+                            <li>CI/CD pipeline checks</li>
+                            <li>Pull request comments</li>
+                            <li>Code editor inline warnings</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h3>Personalize Over Time</h3>
+                    <p>Great tools adapt to individual developers and teams.</p>
+                    <div class="highlights">
+                        <strong>Personalization:</strong>
+                        <ul>
+                            <li>Track what issues each dev needs help with</li>
+                            <li>Adjust explanation depth by experience</li>
+                            <li>Learn team-specific coding standards</li>
+                            <li>Provide relevant examples from their codebase</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="implementation" class="section bg-alt">
+        <div class="container">
+            <h2>4. Implementation Guide</h2>
+            
+            <div class="implementation-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Design the Issue Schema</h3>
+                    <p>Define what issues your tool will detect. Create a structured format for each issue type with rules and severity levels.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Build the Parser</h3>
+                    <p>Use existing AST libraries (ast for Python, babel for JS, tree-sitter for multiple languages) to parse code into a tree structure.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Implement Detection Rules</h3>
+                    <p>Write rule engines to traverse the AST and find patterns matching your issue definitions. Start with 10-15 high-impact rules.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Create Explanation Templates</h3>
+                    <p>For each issue type, create templates that explain the problem in human terms. Include severity, impact, and fix suggestions.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Integrate LLM for Dynamic Explanations</h3>
+                    <p>Use Claude API or similar to generate contextual explanations based on the actual code being reviewed.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <h3>Build UI/Integration Layer</h3>
+                    <p>Create IDE plugins, CLI tools, or web interfaces. Start with one integration, expand later.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">7</div>
+                    <h3>Test and Iterate</h3>
+                    <p>Test on real codebases, collect feedback, reduce false positives, improve explanations.</p>
+                </div>
+            </div>
+
+            <article class="card">
+                <h3>Sample Rule: Complex Function Detection</h3>
+                <div class="code-example">
+                    <strong>Logic:</strong>
+                    <pre><code>Rule: FunctionTooComplex
+  Trigger: Cyclomatic complexity > 10
+  Severity: High
+  Message: "Function is too complex to test and maintain"
+  
+  How to fix:
+  1. Break into smaller functions
+  2. Extract loops into separate methods
+  3. Reduce conditional branches
+  
+  Why it matters:
+  - Complex functions have more bugs
+  - Harder to understand intent
+  - Difficult to test thoroughly
+  - Maintenance nightmare</code></pre>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="resources" class="section">
+        <div class="container">
+            <h2>5. Resources & Tools</h2>
+            
+            <div class="content-grid">
+                <article class="card">
+                    <h3>Libraries & Frameworks</h3>
+                    <div class="highlights">
+                        <strong>For Python:</strong>
+                        <ul>
+                            <li><strong>ast</strong> - Python's built-in AST parser</li>
+                            <li><strong>pylint</strong> - Static analysis tool</li>
+                            <li><strong>radon</strong> - Complexity measurement</li>
+                            <li><strong>bandit</strong> - Security issue finder</li>
+                        </ul>
+                        <strong>For Multiple Languages:</strong>
+                        <ul>
+                            <li><strong>tree-sitter</strong> - Parser for 100+ languages</li>
+                            <li><strong>Roslyn</strong> - C# code analysis</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h3>LLM Integrations</h3>
+                    <div class="highlights">
+                        <ul>
+                            <li><strong>Claude API</strong> - Advanced code understanding</li>
+                            <li><strong>OpenAI GPT-4</strong> - Code analysis & explanations</li>
+                            <li><strong>Llama 2</strong> - Open source alternative</li>
+                        </ul>
+                        <strong>Use for:</strong>
+                        <ul>
+                            <li>Generating contextual explanations</li>
+                            <li>Creating code examples</li>
+                            <li>Suggesting refactoring strategies</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h3>Datasets for Training</h3>
+                    <div class="highlights">
+                        <ul>
+                            <li><strong>GitHub Archive</strong> - 100M+ repositories</li>
+                            <li><strong>CodeSearchNet</strong> - Code-documentation pairs</li>
+                            <li><strong>BigQuery public datasets</strong> - Large-scale code analysis</li>
+                            <li><strong>Stack Overflow</strong> - Real-world coding issues</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h3>Existing Tools to Learn From</h3>
+                    <div class="highlights">
+                        <ul>
+                            <li><strong>CodeClimate</strong> - Code quality metrics</li>
+                            <li><strong>Codacy</strong> - Automated code reviews</li>
+                            <li><strong>DeepSource</strong> - AI code review</li>
+                            <li><strong>GitHub Copilot</strong> - AI code suggestions</li>
+                        </ul>
+                        <strong>Study their approaches and UX!</strong>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h3>Research Papers</h3>
+                    <div class="highlights">
+                        <ul>
+                            <li>"Learning to Detect Code Smells" - Artem Sharapov</li>
+                            <li>"Deep Learning for Program Synthesis" - Zohar & Wolf</li>
+                            <li>"Graph Neural Networks for Code" - Allamanis et al.</li>
+                        </ul>
+                        <strong>Search on:</strong> arxiv.org, semantic-scholar.org
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h3>Learning Path</h3>
+                    <div class="highlights">
+                        <strong>Week 1-2:</strong> AST fundamentals, tree-sitter
+                        <br><strong>Week 3-4:</strong> Static analysis, complexity metrics
+                        <br><strong>Week 5-6:</strong> Pattern detection, rule engines
+                        <br><strong>Week 7-8:</strong> LLM integration
+                        <br><strong>Week 9-10:</strong> UI/integration, testing
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-alt">
+        <div class="container">
+            <h2>Quick Start: Build Your First Version</h2>
+            
+            <article class="card">
+                <h3>MVP Checklist (3-4 weeks)</h3>
+                <div class="highlights">
+                    <strong>Phase 1: Foundation</strong>
+                    <ul>
+                        <li>☐ Choose target language (Python recommended for ease)</li>
+                        <li>☐ Set up AST parser</li>
+                        <li>☐ Define 5 core rules (e.g., function length, variable naming, complexity)</li>
+                    </ul>
+                    
+                    <strong>Phase 2: Analysis</strong>
+                    <ul>
+                        <li>☐ Implement rule detection engine</li>
+                        <li>☐ Create issue classification system</li>
+                        <li>☐ Add severity levels</li>
+                    </ul>
+                    
+                    <strong>Phase 3: Explanation</strong>
+                    <ul>
+                        <li>☐ Write explanation templates for each rule</li>
+                        <li>☐ Create code examples for each issue type</li>
+                        <li>☐ Integrate LLM for dynamic explanations</li>
+                    </ul>
+                    
+                    <strong>Phase 4: Integration</strong>
+                    <ul>
+                        <li>☐ Build simple CLI tool</li>
+                        <li>☐ Create GitHub Action (optional)</li>
+                        <li>☐ Test on 10 real repositories</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 AI-Powered Code Review Learning Guide. Free educational resource.</p>
+            <p>This guide is open source and published under MIT License. Feel free to use, modify, and distribute freely.</p>
+            <p>Built with pure HTML, CSS, and Python. No dependencies. Completely free to host anywhere.</p>
+        </div>
+    </footer>
+</body>
+</html>
